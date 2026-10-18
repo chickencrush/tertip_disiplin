@@ -1,9 +1,14 @@
 const LOGO_URI = './icons/logo.png';
-// Gambar rusak / kosong -> logo bawaan
+// Gambar rusak / kosong -> logo cadangan yang tertanam (tidak bergantung folder icons)
 document.addEventListener('error', (ev) => {
   const t = ev.target;
-  if (t && t.tagName === 'IMG' && !t.dataset.fb) { t.dataset.fb = '1'; t.src = LOGO_URI; }
+  if (t && t.tagName === 'IMG' && !t.dataset.fb) { t.dataset.fb = '1'; t.src = window.LOGO_FALLBACK || LOGO_URI; }
 }, true);
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('img').forEach((im) => {
+    if (im.complete && im.naturalWidth === 0 && !im.dataset.fb) { im.dataset.fb = '1'; im.src = window.LOGO_FALLBACK || LOGO_URI; }
+  });
+});
 
 /**
  * TERTIB DISIPLIN - Main JavaScript Controller
