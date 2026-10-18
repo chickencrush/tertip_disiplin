@@ -4,5 +4,5 @@
  * Contoh: https://script.google.com/macros/s/AKfycb.../exec
  */
 window.TD_CONFIG = {
-  API_URL: 'GANTI_DENGAN_LINK_EXEC_APPS_SCRIPT'
+  API_URL: 'https://script.google.com/macros/s/AKfycbxylituiZ4LyOXTOwxZnhE9PYEoipF1f1qNpZSUd3OmmoFKBiuGaSaK6eBiINiEFEe5nw/exec'
 };
